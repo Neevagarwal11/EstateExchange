@@ -3,3 +3,4 @@ Packages Used:
 2.react-icons
 3.Express
 4.nodemon
+5.dotenv    ---Used for accessing .env variables in other files
