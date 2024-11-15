@@ -4,3 +4,4 @@ Packages Used:
 3.Express
 4.nodemon
 5.dotenv    ---Used for accessing .env variables in other files
+6.bcrypt.js

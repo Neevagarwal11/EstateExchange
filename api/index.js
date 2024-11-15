@@ -2,8 +2,10 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import userRouter from './routes/userRoute.js' 
+import authRouter from './routes/authRoute.js'
 
-
+const app = express()
+app.use(express.json())
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(() =>{     //.env used for encryption as it will be ignored by git
@@ -14,7 +16,6 @@ mongoose.connect(process.env.MONGO).then(() =>{     //.env used for encryption a
 })
 
 
-const app = express()
 
 app.listen(3000,()=>{
     console.log("Server running on 3000")
@@ -22,3 +23,4 @@ app.listen(3000,()=>{
 
 
 app.use('/user' , userRouter)
+app.use('/auth' , authRouter)
